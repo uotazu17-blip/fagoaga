@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fagoaga Asesores | Asesoría en San Juan, Pamplona</title>
+<meta name="description" content="Fagoaga Asesores: asesoría fiscal, contable, jurídica, concursal y auditoría en el barrio de San Juan, Pamplona. Más de 15 años de experiencia.">
+<style>
+  :root{
+    --naranja:#e8621a;
+    --naranja-osc:#c94f10;
+    --gris-osc:#22252a;
+    --gris-claro:#f5f5f4;
+    --texto:#3a3d42;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI',Arial,sans-serif;color:var(--texto);line-height:1.6;}
+  h1,h2,h3{color:var(--gris-osc);}
+
+  /* HEADER */
+  header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100;}
+  .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
+  .logo{font-size:1.7rem;font-weight:800;color:var(--gris-osc);text-decoration:none;}
+  .logo span{color:var(--naranja);}
+  .logo small{display:block;font-size:.65rem;letter-spacing:3px;color:var(--naranja);font-weight:600;}
+  nav a{margin-left:22px;text-decoration:none;color:var(--gris-osc);font-weight:600;font-size:.95rem;}
+  nav a:hover{color:var(--naranja);}
+  .tel-btn{background:var(--naranja);color:#fff!important;padding:8px 18px;border-radius:25px;}
+  .tel-btn:hover{background:var(--naranja-osc);}
+
+  /* HERO */
+  .hero{background:linear-gradient(rgba(20,22,26,.72),rgba(20,22,26,.72)),url('https://fagoagaasesores.com/wp-content/uploads/2023/03/fachada-1024x768.jpg') center/cover no-repeat;color:#fff;text-align:center;padding:110px 20px;}
+  .hero h1{color:#fff;font-size:2.6rem;margin-bottom:14px;}
+  .hero p{font-size:1.15rem;max-width:700px;margin:0 auto 28px;}
+  .valores{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:30px;}
+  .valores span{border:1px solid rgba(255,255,255,.55);padding:6px 18px;border-radius:25px;font-size:.9rem;}
+  .btn{display:inline-block;background:var(--naranja);color:#fff;text-decoration:none;padding:13px 32px;border-radius:30px;font-weight:700;margin:5px;}
+  .btn:hover{background:var(--naranja-osc);}
+  .btn.ghost{background:transparent;border:2px solid #fff;}
+
+  /* SECCIONES */
+  section{max-width:1100px;margin:0 auto;padding:70px 20px;}
+  .titulo{text-align:center;margin-bottom:45px;}
+  .titulo h2{font-size:2rem;}
+  .titulo .linea{width:60px;height:4px;background:var(--naranja);margin:12px auto 0;border-radius:2px;}
+
+  /* SERVICIOS */
+  .servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+  .card{background:#fff;border:1px solid #eee;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.05);transition:.25s;display:flex;flex-direction:column;}
+  .card:hover{transform:translateY(-6px);box-shadow:0 10px 24px rgba(0,0,0,.12);}
+  .card img{width:100%;height:180px;object-fit:cover;display:block;transition:.4s;}
+  .card:hover img{transform:scale(1.05);}
+  .card .cuerpo{padding:26px 24px;}
+  .card .icono{width:48px;height:48px;background:linear-gradient(135deg,var(--naranja),var(--naranja-osc));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px;}
+  .card h3{margin-bottom:10px;font-size:1.15rem;}
+  .card p{font-size:.95rem;}
+
+  /* GALERIA */
+  .galeria{background:var(--gris-claro);}
+  .galeria-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+  .galeria-grid figure{border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.1);position:relative;}
+  .galeria-grid img{width:100%;height:230px;object-fit:cover;display:block;transition:.4s;}
+  .galeria-grid figure:hover img{transform:scale(1.07);}
+  .galeria-grid figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:.85rem;padding:26px 14px 12px;font-weight:600;}
+
+  /* UBICACION */
+  .ubicacion-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .datos h3{margin-bottom:16px;font-size:1.3rem;}
+  .dato{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start;}
+  .dato .ico{color:var(--naranja);font-size:1.2rem;margin-top:2px;}
+  .mapa{border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.12);height:380px;}
+  .mapa iframe{width:100%;height:100%;border:0;}
+  @media(max-width:800px){.ubicacion-grid{grid-template-columns:1fr;}}
+
+  /* CONTACTO */
+  .contacto-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;}
+  @media(max-width:800px){.contacto-grid{grid-template-columns:1fr;}}
+  form label{display:block;font-weight:600;margin:14px 0 6px;font-size:.92rem;}
+  form input,form select,form textarea{width:100%;padding:12px 14px;border:1px solid #d8d8d6;border-radius:8px;font-size:.95rem;font-family:inherit;}
+  form input:focus,form textarea:focus,form select:focus{outline:none;border-color:var(--naranja);box-shadow:0 0 0 3px rgba(232,98,26,.15);}
+  form button{margin-top:20px;width:100%;border:none;cursor:pointer;font-size:1rem;}
+  .info-contacto{background:var(--gris-osc);color:#e8e8e6;border-radius:14px;padding:36px 30px;}
+  .info-contacto h3{color:#fff;margin-bottom:20px;}
+  .info-contacto p{margin-bottom:14px;}
+  .info-contacto a{color:var(--naranja);text-decoration:none;font-weight:600;}
+  .info-contacto img{width:100%;border-radius:10px;margin-top:10px;}
+
+  footer{background:var(--gris-osc);color:#9a9da2;text-align:center;padding:26px 20px;font-size:.88rem;}
+  footer b{color:#fff;}
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#inicio" class="logo">fagoaga<span>.</span><small>ASESORES · AUDITORES</small></a>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+      <a href="tel:+34948269853" class="tel-btn">☎ 948 26 98 53</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="inicio">
+  <div class="valores">
+    <span>Experiencia</span><span>Compromiso</span><span>Profesionalidad</span><span>Cercanía</span>
+  </div>
+  <h1>Tu asesoría de confianza en San Juan, Pamplona</h1>
+  <p>Más de 15 años de experiencia en asesoramiento fiscal, contable, jurídico, concursal y auditoría para empresas y autónomos.</p>
+  <a href="#contacto" class="btn">Solicita información</a>
+  <a href="tel:+34948269853" class="btn ghost">Llámanos</a>
+</div>
+
+<section id="servicios">
+  <div class="titulo">
+    <h2>Nuestros servicios</h2>
+    <div class="linea"></div>
+  </div>
+  <div class="servicios-grid">
+    <div class="card">
+      <img src="img/fiscal.jpg" alt="Asesoría fiscal: preparación de impuestos">
+      <div class="cuerpo">
+        <div class="icono">📊</div>
+        <h3>Asesoría Fiscal</h3>
+        <p>Impuestos de empresas y autónomos, declaración de la renta, IVA, IRPF, planificación fiscal y gestión del día a día impositivo.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/contable.jpg" alt="Equipo contable trabajando con documentos">
+      <div class="cuerpo">
+        <div class="icono">📚</div>
+        <h3>Asesoría Contable</h3>
+        <p>Contabilidad oficial, teneduría de libros, cuentas anuales e informes de gestión para que siempre tengas tus cuentas al día.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/reunion.jpg" alt="Reunión de asesoramiento jurídico">
+      <div class="cuerpo">
+        <div class="icono">⚖️</div>
+        <h3>Asesoría Jurídica</h3>
+        <p>Asesoramiento jurídico mercantil, civil y laboral para dar seguridad jurídica a tu actividad empresarial.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/oficina.jpg" alt="Despacho profesional en trabajo de auditoría">
+      <div class="cuerpo">
+        <div class="icono">🔍</div>
+        <h3>Auditoría</h3>
+        <p>Auditoría de cuentas e informes periciales con rigor y total independencia para empresas y entidades.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/asesoria.jpg" alt="Asesor acompañando a cliente en situación de crisis">
+      <div class="cuerpo">
+        <div class="icono">🤝</div>
+        <h3>Asesoría Concursal</h3>
+        <p>Apoyo intensivo en situaciones de crisis empresarial, concursos de acreedores y reestructuración de deuda.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/fiscal.jpg" alt="Gestión para autónomos y emprendedores" style="filter:hue-rotate(15deg);">
+      <div class="cuerpo">
+        <div class="icono">🚀</div>
+        <h3>Autónomos y Emprendedores</h3>
+        <p>Alta de autónomos, gestión mensual, nóminas y acompañamiento integral desde el primer día de tu actividad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="galeria" id="galeria">
+  <div class="titulo">
+    <h2>Nuestro día a día</h2>
+    <div class="linea"></div>
+  </div>
+  <div class="galeria-grid">
+    <figure>
+      <img src="img/reunion.jpg" alt="Reunión con clientes">
+      <figcaption>Reuniones cercanas con cada cliente</figcaption>
+    </figure>
+    <figure>
+      <img src="img/contable.jpg" alt="Equipo de trabajo">
+      <figcaption>Un equipo comprometido con tu negocio</figcaption>
+    </figure>
+    <figure>
+      <img src="img/oficina.jpg" alt="Despacho profesional">
+      <figcaption>Despacho moderno en el barrio de San Juan</figcaption>
+    </figure>
+    <figure>
+      <img src="img/asesoria.jpg" alt="Atención personalizada">
+      <figcaption>Trato exclusivo según tus necesidades</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="ubicacion">
+  <div class="titulo">
+    <h2>Dónde estamos</h2>
+    <div class="linea"></div>
+  </div>
+  <div class="ubicacion-grid">
+    <div class="datos">
+      <h3>En pleno barrio de San Juan</h3>
+      <div class="dato"><div class="ico">📍</div><div><b>Dirección</b><br>Calle Monasterio de Urdax, 21 (bajo trasera)<br>31011 Pamplona / Iruña, Navarra</div></div>
+      <div class="dato"><div class="ico">☎️</div><div><b>Teléfono</b><br><a href="tel:+34948269853" style="color:var(--naranja)">948 26 98 53</a></div></div>
+      <div class="dato"><div class="ico">✉️</div><div><b>Email</b><br><a href="mailto:info@fagoagaasesores.com" style="color:var(--naranja)">info@fagoagaasesores.com</a></div></div>
+      <div class="dato"><div class="ico">🕒</div><div><b>Horario</b><br>Lunes a Viernes · 9:00 – 14:00 y 16:00 – 19:00</div></div>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Calle+Monasterio+de+Urdax+21+Pamplona" target="_blank">Cómo llegar ↗</a>
+    </div>
+    <div class="mapa">
+      <iframe src="https://www.google.com/maps?q=Calle+Monasterio+de+Urdax+21,+31011+Pamplona,+Navarra&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="titulo">
+    <h2>Contacta con nosotros</h2>
+    <div class="linea"></div>
+  </div>
+  <div class="contacto-grid">
+    <div class="info-contacto">
+      <h3>¿Hablamos?</h3>
+      <p>Si todavía no somos tus asesores, déjanos serlo. Cuéntanos tu caso y te daremos una respuesta rápida y sin compromiso.</p>
+      <p>📞 <a href="tel:+34948269853">948 26 98 53</a></p>
+      <p>✉️ <a href="mailto:info@fagoagaasesores.com">info@fagoagaasesores.com</a></p>
+      <p>📍 Calle Monasterio de Urdax, 21 trasera<br>31011 San Juan, Pamplona</p>
+      <img src="img/asesoria.jpg" alt="Atención al cliente en Fagoaga Asesores">
+    </div>
+    <form onsubmit="event.preventDefault();alert('¡Gracias! Hemos recibido tu mensaje. Te contactaremos lo antes posible.');this.reset();">
+      <label for="nombre">Nombre y apellidos *</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required placeholder="tu@email.com">
+
+      <label for="tel">Teléfono</label>
+      <input type="tel" id="tel" name="telefono" placeholder="600 000 000">
+
+      <label for="servicio">Servicio de interés</label>
+      <select id="servicio" name="servicio">
+        <option>Asesoría Fiscal</option>
+        <option>Asesoría Contable</option>
+        <option>Asesoría Jurídica</option>
+        <option>Auditoría</option>
+        <option>Asesoría Concursal</option>
+        <option>Autónomos y Emprendedores</option>
+      </select>
+
+      <label for="mensaje">Mensaje *</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntanos brevemente tu consulta..."></textarea>
+
+      <label style="font-weight:400;font-size:.85rem;display:flex;gap:8px;align-items:center;">
+        <input type="checkbox" required style="width:auto;"> Acepto la política de privacidad
+      </label>
+
+      <button type="submit" class="btn">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <b>Fagoaga Asesores Asociados S.L.</b> · CIF B71289219 · Calle Monasterio de Urdax 21 (trasera), 31011 Pamplona · ☎ 948 26 98 53
+  <br>© 2026 Fagoaga Asesores · Asesoría en San Juan, Pamplona
+</footer>
+
+</body>
+</html>
